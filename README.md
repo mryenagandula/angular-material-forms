@@ -51,7 +51,103 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 - Form Controls like firstName, secondName , email, username, password and mobile.
 
 - Add The below html in signup.component.html.
+
+```bash
+  <div class="container">
+    <form class="form shadow m-3 p-3" [formGroup]="form" (ngSubmit)="submitForm()">
+        <h1>Sign Up Form</h1>
+    </form>
+</div>
+```
+
+```bash
+  <div class="container">
+    <form class="form shadow m-3 p-3" [formGroup]="form" (ngSubmit)="submitForm()">
+        <h1>Sign Up Form</h1>
+        <div class="row mt-3">
+            <mat-form-field class="col-md-6">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName" placeholder="Enter First Name">
+            </mat-form-field>
+        </div>
+    </form>
+</div>
+```
   
+
+```bash
+<div class="container">
+    <form class="form shadow m-3 p-3" [formGroup]="form" (ngSubmit)="submitForm()">
+        <h1>Sign Up Form</h1>
+        <div class="row mt-3">
+            <mat-form-field class="col-md-6">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName" placeholder="Enter First Name">
+                <mat-error *ngIf="this.form.controls.firstName.hasError('required')">
+                  First Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+</div>
+```
+
+```bash
+<div class="container">
+    <form class="form shadow m-3 p-3" [formGroup]="form" (ngSubmit)="submitForm()">
+        <h1>Sign Up Form</h1>
+        <div class="row mt-3">
+            <mat-form-field class="col-md-6">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName" placeholder="Enter First Name">
+                <mat-error *ngIf="this.form.controls.firstName.hasError('required')">
+                  First Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row mt-3">
+            <mat-form-field class="col-md-6">
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName="lastName" placeholder="Enter Last Name">
+                <mat-error *ngIf="this.form.controls.lastName.hasError('required')">
+                  Last Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row mt-3">
+            <mat-form-field class="col-md-6">
+                <mat-label>User Name</mat-label>
+                <input matInput formControlName="username" placeholder="Enter Username">
+                <mat-error *ngIf="this.form.controls.username.hasError('required')">
+                  Username is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row mt-3">
+            <mat-form-field class="col-md-6">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" placeholder="Enter Email">
+                <mat-error *ngIf="this.form.controls.email.hasError('required')">
+                  Email <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row mt-3">
+            <mat-form-field class="col-md-6">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput formControlName="password" placeholder="Enter Password">
+                <mat-error *ngIf="this.form.controls.password.hasError('required')">
+                  Password is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row mt-3">
+            <button type="submit" mat-raised-button color="primary" class="m-2" style="width: 100px;" [disabled]="!form.valid">Submit Form</button>
+            <button type="button" mat-raised-button color="warn" class="m-2" style="width: 100px;" (click)="form.reset()">Reset</button>
+        </div>
+    </form>
+</div>
+  ```
   
   ### OUTPUT
   
