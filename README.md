@@ -151,4 +151,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
   
   ### OUTPUT
   
+![image](https://user-images.githubusercontent.com/98155788/169647286-66781477-d50d-42d0-8aba-ae720f796e6c.png)
+
+
+![image](https://user-images.githubusercontent.com/98155788/169647322-b385d570-3269-4985-acca-8a3b97987bf8.png)
+
+
 
